@@ -1,4 +1,5 @@
-# Syntax Analysis (Parsing)
+# Lec 2 - Syntax Analysis (Parsing) Overview
+08/27/2024
 #### Parsing Analogy
 - Syntax analysis for natural languages
 	- Identify the function of each word
@@ -33,7 +34,6 @@
 - Shorthand notation - *vertical bar* for multiple productions
 	- S -> a S a | T
 	- T -> b T b | $\epsilon$
-- 
 
 #### Derivation (High-Level)
 - Sequence of applications of productions that result in a valid string of tokens
@@ -81,4 +81,4 @@ Original Input: (1 + 2 + (3 + 4)) + 5
 - Discards (abstract) unneeded information
 
 #### Ambiguous Grammar
-- You can end up with 2 different parse tree
+- You can end up with 2 different parse trees

@@ -1,5 +1,5 @@
-# Compilers Overview
-
+# Lec 1 - Compilers Overview
+08/22/2024
 #### Why Compilers?
 - Ease of programming
 	- Nobody wants to program in assembly
@@ -11,7 +11,7 @@
 
 #### Compiler Structure
 1. **Scanning**: Lexical Analysis
-2. **Parsing**: Syntax Analysis
+2. **[[Lec 2 - Syntax Analysis Overview|Parsing]]**: Syntax Analysis
 3. **Type checking/variable binding**: Semantic Analysis
 4. **Optimization**
 5. **Code Generation**
@@ -124,7 +124,7 @@
 - If expansion needs to be done, choose the appropriate rule
 	- Things enclosed with `< >` are to be expanded
 ##### Examples
-- `<DECL-STMT> -> <TYPE>VAR<VAR-LIST>
+- `<DECL-STMT> -> <TYPE>VAR<VAR-LIST>`
 - `<TYPE> -> INT | FLOAT | ...`
 
 #### Traditional Three-pass Complier
