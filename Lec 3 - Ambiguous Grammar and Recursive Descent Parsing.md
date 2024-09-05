@@ -1,6 +1,5 @@
-# Lec 3 - Ambiguous Grammar and Recursive Descent Parsing
+# Lec 3 - Ambiguous Grammar and Recursive Descent [[Lec 2 - Syntax Analysis Overview|Parsing]]
 08/29/2024
-
 ## Ambiguity
 #### Ambiguity
 - A grammar is *ambiguous* if it has more than one parse tree for some string
@@ -118,4 +117,27 @@ bool E() {
 #### Left Factoring
 - What if my grammar doesn't have LL(1) property?
 	- Sometimes we can transform the grammar
-- 
+- A -> $\alpha\beta_1$ | $\alpha\beta_2$ | $\alpha\beta_3$
+	- This becomes...
+	- A -> $\alpha$Z
+	- Z -> $\beta_1$ | $\beta_2$ | $\beta_n$
+- But how do we know which rule to use among the 3 production rules for $\beta$
+	- Let the next token tell what to pick
+##### Example
+E -> T + E | T
+T -> int * T | int | ( E )
+
+Rewrite...
+E -> T X
+X -> + E | $\epsilon$
+T -> int Y | ( E )
+Y -> \* T | $\epsilon$
+
+#### Summary
+1. Test your grammar whether it satisfied LL(1)
+2. If not, rewrite grammar to have LL(1) property
+	- Remove left recursion (if exists; recursive descent parsing should avoid infinite calls)
+	- Left factor it
+1. Define a parse function for each non-terminal
+	- Implement a case for each right-hand side of the production (alt productions are combined w/ logical disjunction)
+	- Call parse functions as needed for non-terminals in the right-hand side of the production
