@@ -42,3 +42,24 @@
 	- **Lex** - transducer, transforms an input stream into the alphabet of the grammar
 	- **Yacc** - Another compiler compiler
 		- *Bison* is the GNU counterpart
+
+#### How Does Lex Work?
+- Formal basis for lexical analysis is the finite state automaton (FSA)
+	- REs generate regular sets
+	- FSAs recognize regular sets
+- FSA - informal defn
+	- Finite set of states
+	- Transitions between states
+	- An initial state
+	- *A set of final (accepting) states*
+
+#### Two Kinds of FSA
+- Non-deterministic finite automata (NFA)
+	- There may be multiple possible transitions for one input in a given state
+	- There may be some transitions that don't consume an input (i.e., $\epsilon$-transition)
+- Deterministic finite automata (DFA)
+	- The transition from each state is uniquely determined by the current input character, i.e., state transition is completely determined by input
+	- No $\epsilon$-transitions
+
+
+
